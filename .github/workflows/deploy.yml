@@ -10,7 +10,11 @@ env:
 jobs:
   test:
     environment: testing
+    # if container is specified, the runner will be used for the hosting server only
     runs-on: ubuntu-latest
+    # The environment which the job will run on is in the container
+    container:
+      image: node:16
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.2y84a8e.mongodb.net
